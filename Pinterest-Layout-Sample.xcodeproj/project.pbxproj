@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45666F2724757C6C0085A532 /* PhotoListViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45666F2624757C6C0085A532 /* PhotoListViewPresenter.swift */; };
 		45DF8C7824755FDD00E993A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF8C7724755FDD00E993A8 /* AppDelegate.swift */; };
 		45DF8C7A24755FDD00E993A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF8C7924755FDD00E993A8 /* SceneDelegate.swift */; };
 		45DF8C8124755FDF00E993A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45DF8C8024755FDF00E993A8 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		45666F2624757C6C0085A532 /* PhotoListViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewPresenter.swift; sourceTree = "<group>"; };
 		45DF8C7424755FDD00E993A8 /* Pinterest-Layout-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pinterest-Layout-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DF8C7724755FDD00E993A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45DF8C7924755FDD00E993A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		45DF8C8C247576C200E993A8 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				45666F2624757C6C0085A532 /* PhotoListViewPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45666F2724757C6C0085A532 /* PhotoListViewPresenter.swift in Sources */,
 				45DF8C91247579D200E993A8 /* PhotoListViewController.swift in Sources */,
 				45DF8C7824755FDD00E993A8 /* AppDelegate.swift in Sources */,
 				45DF8C7A24755FDD00E993A8 /* SceneDelegate.swift in Sources */,
