@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		45DF8C7824755FDD00E993A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF8C7724755FDD00E993A8 /* AppDelegate.swift */; };
 		45DF8C7A24755FDD00E993A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF8C7924755FDD00E993A8 /* SceneDelegate.swift */; };
-		45DF8C7C24755FDD00E993A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF8C7B24755FDD00E993A8 /* ViewController.swift */; };
-		45DF8C7F24755FDD00E993A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DF8C7D24755FDD00E993A8 /* Main.storyboard */; };
 		45DF8C8124755FDF00E993A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45DF8C8024755FDF00E993A8 /* Assets.xcassets */; };
 		45DF8C8424755FDF00E993A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45DF8C8224755FDF00E993A8 /* LaunchScreen.storyboard */; };
+		45DF8C91247579D200E993A8 /* PhotoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF8C8F247579D200E993A8 /* PhotoListViewController.swift */; };
+		45DF8C92247579D200E993A8 /* PhotoListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45DF8C90247579D200E993A8 /* PhotoListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		45DF8C7424755FDD00E993A8 /* Pinterest-Layout-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pinterest-Layout-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DF8C7724755FDD00E993A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45DF8C7924755FDD00E993A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		45DF8C7B24755FDD00E993A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		45DF8C7E24755FDD00E993A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		45DF8C8024755FDF00E993A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45DF8C8324755FDF00E993A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		45DF8C8524755FDF00E993A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45DF8C8F247579D200E993A8 /* PhotoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewController.swift; sourceTree = "<group>"; };
+		45DF8C90247579D200E993A8 /* PhotoListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoListViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +56,47 @@
 		45DF8C7624755FDD00E993A8 /* Pinterest-Layout-Sample */ = {
 			isa = PBXGroup;
 			children = (
+				45DF8C8E2475772F00E993A8 /* Model */,
+				45DF8C8D247576C500E993A8 /* View */,
+				45DF8C8C247576C200E993A8 /* Presenter */,
+				45DF8C8B247576BA00E993A8 /* Other */,
+			);
+			path = "Pinterest-Layout-Sample";
+			sourceTree = "<group>";
+		};
+		45DF8C8B247576BA00E993A8 /* Other */ = {
+			isa = PBXGroup;
+			children = (
 				45DF8C7724755FDD00E993A8 /* AppDelegate.swift */,
 				45DF8C7924755FDD00E993A8 /* SceneDelegate.swift */,
-				45DF8C7B24755FDD00E993A8 /* ViewController.swift */,
-				45DF8C7D24755FDD00E993A8 /* Main.storyboard */,
 				45DF8C8024755FDF00E993A8 /* Assets.xcassets */,
 				45DF8C8224755FDF00E993A8 /* LaunchScreen.storyboard */,
 				45DF8C8524755FDF00E993A8 /* Info.plist */,
 			);
-			path = "Pinterest-Layout-Sample";
+			path = Other;
+			sourceTree = "<group>";
+		};
+		45DF8C8C247576C200E993A8 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		45DF8C8D247576C500E993A8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				45DF8C8F247579D200E993A8 /* PhotoListViewController.swift */,
+				45DF8C90247579D200E993A8 /* PhotoListViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		45DF8C8E2475772F00E993A8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +158,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				45DF8C8424755FDF00E993A8 /* LaunchScreen.storyboard in Resources */,
+				45DF8C92247579D200E993A8 /* PhotoListViewController.xib in Resources */,
 				45DF8C8124755FDF00E993A8 /* Assets.xcassets in Resources */,
-				45DF8C7F24755FDD00E993A8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45DF8C7C24755FDD00E993A8 /* ViewController.swift in Sources */,
+				45DF8C91247579D200E993A8 /* PhotoListViewController.swift in Sources */,
 				45DF8C7824755FDD00E993A8 /* AppDelegate.swift in Sources */,
 				45DF8C7A24755FDD00E993A8 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +179,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		45DF8C7D24755FDD00E993A8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				45DF8C7E24755FDD00E993A8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		45DF8C8224755FDF00E993A8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -286,7 +310,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LVR5UQEHBD;
-				INFOPLIST_FILE = "Pinterest-Layout-Sample/Info.plist";
+				INFOPLIST_FILE = "Pinterest-Layout-Sample/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +328,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LVR5UQEHBD;
-				INFOPLIST_FILE = "Pinterest-Layout-Sample/Info.plist";
+				INFOPLIST_FILE = "Pinterest-Layout-Sample/Other/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

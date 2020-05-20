@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  PhotoListViewController.swift
 //  Pinterest-Layout-Sample
 //
 //  Created by kawaharadai on 2020/05/20.
@@ -8,13 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class PhotoListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
     }
 
-
 }
-
