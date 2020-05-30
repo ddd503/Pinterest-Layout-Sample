@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		45666F2724757C6C0085A532 /* PhotoListViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45666F2624757C6C0085A532 /* PhotoListViewPresenter.swift */; };
+		45666F2D247582CC0085A532 /* PhotoInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45666F2C247582CC0085A532 /* PhotoInfoEntity.swift */; };
+		45666F30247582FF0085A532 /* PhotoInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45666F2F247582FF0085A532 /* PhotoInfoRepository.swift */; };
+		45666F32247583290085A532 /* APIDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45666F31247583290085A532 /* APIDataStore.swift */; };
 		45DF8C7824755FDD00E993A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF8C7724755FDD00E993A8 /* AppDelegate.swift */; };
 		45DF8C7A24755FDD00E993A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF8C7924755FDD00E993A8 /* SceneDelegate.swift */; };
 		45DF8C8124755FDF00E993A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45DF8C8024755FDF00E993A8 /* Assets.xcassets */; };
@@ -18,6 +21,9 @@
 
 /* Begin PBXFileReference section */
 		45666F2624757C6C0085A532 /* PhotoListViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewPresenter.swift; sourceTree = "<group>"; };
+		45666F2C247582CC0085A532 /* PhotoInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoEntity.swift; sourceTree = "<group>"; };
+		45666F2F247582FF0085A532 /* PhotoInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoRepository.swift; sourceTree = "<group>"; };
+		45666F31247583290085A532 /* APIDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataStore.swift; sourceTree = "<group>"; };
 		45DF8C7424755FDD00E993A8 /* Pinterest-Layout-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pinterest-Layout-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DF8C7724755FDD00E993A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45DF8C7924755FDD00E993A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +104,9 @@
 		45DF8C8E2475772F00E993A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				45666F2C247582CC0085A532 /* PhotoInfoEntity.swift */,
+				45666F2F247582FF0085A532 /* PhotoInfoRepository.swift */,
+				45666F31247583290085A532 /* APIDataStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,9 +183,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				45666F2724757C6C0085A532 /* PhotoListViewPresenter.swift in Sources */,
+				45666F2D247582CC0085A532 /* PhotoInfoEntity.swift in Sources */,
 				45DF8C91247579D200E993A8 /* PhotoListViewController.swift in Sources */,
 				45DF8C7824755FDD00E993A8 /* AppDelegate.swift in Sources */,
+				45666F30247582FF0085A532 /* PhotoInfoRepository.swift in Sources */,
 				45DF8C7A24755FDD00E993A8 /* SceneDelegate.swift in Sources */,
+				45666F32247583290085A532 /* APIDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
