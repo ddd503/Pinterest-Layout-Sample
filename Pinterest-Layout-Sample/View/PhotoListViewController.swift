@@ -7,37 +7,54 @@
 //
 
 import UIKit
-import Keys
 
 final class PhotoListViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let url = URL(string: "https://api.flickr.com/services/rest/")!
-        let request = url
-            .getRequest(params: ["api_key": PinterestLayoutSampleKeys().api_key,
-                                 "method": "flickr.interestingness.getList",
-                                 "date": "2020-05-29",
-                                 "extras": "url_o,date_taken",
-                                 "per_page": "3",
-                                 "page": "1",
-                                 "format": "json",
-                                 "nojsoncallback": "1"])!
-        print(request.url?.absoluteString as Any)
-        APIDataStoreImpl().connection(requet: request) { (result) in
-            switch result {
-            case .success(let data):
-                print(String(data: data, encoding: .utf8) as Any)
-                do {
-                    let ddd = try JSONDecoder().decode(PhotoInfoEntity.self, from: data)
-                    print(ddd)
-                } catch {
-                    print(error.localizedDescription)
-                }
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
+    
+    @IBOutlet weak private var photoListView: UICollectionView! {
+        didSet {
+            photoListView.dataSource = self
+            photoListView.delegate = self
+            photoListView.register(PhotoInfoCell.nib(),
+                                   forCellWithReuseIdentifier: PhotoInfoCell.identifier)
         }
     }
+    
+    private let presenter: PhotoListViewPresenter
+    
+    init(presenter: PhotoListViewPresenter) {
+        self.presenter = presenter
+        super.init(nibName: "PhotoListViewController", bundle: .main)
+        presenter.setup(viewController: self)
+    }
+    
+    required init?(coder: NSCoder) {
+        return nil
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        presenter.viewDidLoad()
+    }
+    
+}
 
+extension PhotoListViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        presenter.photos.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoInfoCell.identifier, for: indexPath) as! PhotoInfoCell
+        return cell
+    }
+}
+
+extension PhotoListViewController: UICollectionViewDelegate {}
+
+extension PhotoListViewController: PhotoListViewPresenterOutput {
+    func updatePhotoList() {
+        DispatchQueue.main.async { [unowned self] in
+            self.photoListView.reloadData()
+        }
+    }
 }

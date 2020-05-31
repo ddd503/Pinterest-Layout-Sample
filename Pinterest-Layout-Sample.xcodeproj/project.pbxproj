@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		452414242482214D004ABF77 /* URL+Requst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452414232482214D004ABF77 /* URL+Requst.swift */; };
+		45241427248351E4004ABF77 /* PhotoInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45241425248351E4004ABF77 /* PhotoInfoCell.swift */; };
+		45241428248351E4004ABF77 /* PhotoInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45241426248351E4004ABF77 /* PhotoInfoCell.xib */; };
+		4524142B248352F7004ABF77 /* PhotoListTransitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524142A248352F7004ABF77 /* PhotoListTransitter.swift */; };
 		45666F2724757C6C0085A532 /* PhotoListViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45666F2624757C6C0085A532 /* PhotoListViewPresenter.swift */; };
 		45666F2D247582CC0085A532 /* PhotoInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45666F2C247582CC0085A532 /* PhotoInfoEntity.swift */; };
 		45666F30247582FF0085A532 /* PhotoInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45666F2F247582FF0085A532 /* PhotoInfoRepository.swift */; };
@@ -25,6 +28,9 @@
 		3570006E82E54A0CE41C79FA /* Pods_Pinterest_Layout_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pinterest_Layout_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		41C7A93E29B814434CA2901E /* Pods-Pinterest-Layout-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pinterest-Layout-Sample.debug.xcconfig"; path = "Target Support Files/Pods-Pinterest-Layout-Sample/Pods-Pinterest-Layout-Sample.debug.xcconfig"; sourceTree = "<group>"; };
 		452414232482214D004ABF77 /* URL+Requst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Requst.swift"; sourceTree = "<group>"; };
+		45241425248351E4004ABF77 /* PhotoInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoCell.swift; sourceTree = "<group>"; };
+		45241426248351E4004ABF77 /* PhotoInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoInfoCell.xib; sourceTree = "<group>"; };
+		4524142A248352F7004ABF77 /* PhotoListTransitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListTransitter.swift; sourceTree = "<group>"; };
 		45666F2624757C6C0085A532 /* PhotoListViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewPresenter.swift; sourceTree = "<group>"; };
 		45666F2C247582CC0085A532 /* PhotoInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoEntity.swift; sourceTree = "<group>"; };
 		45666F2F247582FF0085A532 /* PhotoInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoRepository.swift; sourceTree = "<group>"; };
@@ -60,6 +66,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		45241429248352CD004ABF77 /* Transitter */ = {
+			isa = PBXGroup;
+			children = (
+				4524142A248352F7004ABF77 /* PhotoListTransitter.swift */,
+			);
+			path = Transitter;
+			sourceTree = "<group>";
+		};
 		45DF8C6B24755FDD00E993A8 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +95,7 @@
 		45DF8C7624755FDD00E993A8 /* Pinterest-Layout-Sample */ = {
 			isa = PBXGroup;
 			children = (
+				45241429248352CD004ABF77 /* Transitter */,
 				4524142224822122004ABF77 /* Extension */,
 				45DF8C8E2475772F00E993A8 /* Model */,
 				45DF8C8D247576C500E993A8 /* View */,
@@ -115,6 +130,8 @@
 			children = (
 				45DF8C8F247579D200E993A8 /* PhotoListViewController.swift */,
 				45DF8C90247579D200E993A8 /* PhotoListViewController.xib */,
+				45241425248351E4004ABF77 /* PhotoInfoCell.swift */,
+				45241426248351E4004ABF77 /* PhotoInfoCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -135,7 +152,6 @@
 				41C7A93E29B814434CA2901E /* Pods-Pinterest-Layout-Sample.debug.xcconfig */,
 				4B535AEC616C9594ACF5A848 /* Pods-Pinterest-Layout-Sample.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -207,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45241428248351E4004ABF77 /* PhotoInfoCell.xib in Resources */,
 				45DF8C8424755FDF00E993A8 /* LaunchScreen.storyboard in Resources */,
 				45DF8C92247579D200E993A8 /* PhotoListViewController.xib in Resources */,
 				45DF8C8124755FDF00E993A8 /* Assets.xcassets in Resources */,
@@ -262,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4524142B248352F7004ABF77 /* PhotoListTransitter.swift in Sources */,
 				45666F2724757C6C0085A532 /* PhotoListViewPresenter.swift in Sources */,
 				45666F2D247582CC0085A532 /* PhotoInfoEntity.swift in Sources */,
 				45DF8C91247579D200E993A8 /* PhotoListViewController.swift in Sources */,
@@ -270,6 +288,7 @@
 				452414242482214D004ABF77 /* URL+Requst.swift in Sources */,
 				45DF8C7A24755FDD00E993A8 /* SceneDelegate.swift in Sources */,
 				45666F32247583290085A532 /* APIDataStore.swift in Sources */,
+				45241427248351E4004ABF77 /* PhotoInfoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

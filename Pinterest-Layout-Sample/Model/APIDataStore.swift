@@ -39,7 +39,6 @@ final class APIDataStoreImpl: APIDataStore {
                 completion(.success(data))
             } else {
                 // レスポンスのステータスコードが200でない場合などはサーバサイドのエラー
-                let error = NSError(domain: "ServerSideError", code: response.statusCode, userInfo: nil)
                 completion(.failure(APIError.serverError(response)))
             }
         }
