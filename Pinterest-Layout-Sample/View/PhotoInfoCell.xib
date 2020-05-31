@@ -15,10 +15,24 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fio-m7-0cz">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    </imageView>
+                </subviews>
             </view>
-            <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fio-m7-0cz" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Bvy-TQ-W1o"/>
+                <constraint firstAttribute="bottom" secondItem="fio-m7-0cz" secondAttribute="bottom" id="dIB-u2-wjv"/>
+                <constraint firstItem="fio-m7-0cz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="rfC-Xa-qby"/>
+                <constraint firstAttribute="trailing" secondItem="fio-m7-0cz" secondAttribute="trailing" id="z9F-f4-UdD"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <point key="canvasLocation" x="139" y="118"/>
+            <connections>
+                <outlet property="photoImageView" destination="fio-m7-0cz" id="4Qx-jj-W1m"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="117.85714285714285"/>
         </collectionViewCell>
     </objects>
 </document>
