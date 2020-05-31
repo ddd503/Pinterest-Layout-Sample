@@ -19,7 +19,6 @@ protocol APIDataStore {
 }
 
 final class APIDataStoreImpl: APIDataStore {
-
     func connection(requet: URLRequest, completion: @escaping (Result<Data, Error>) -> ()) {
         let task = URLSession.shared.dataTask(with: requet) { (data, response, error) in
             if let error = error {
@@ -47,5 +46,4 @@ final class APIDataStoreImpl: APIDataStore {
         // 実行
         task.resume()
     }
-
 }
