@@ -60,7 +60,8 @@ extension PhotoListViewController: UICollectionViewDelegateFlowLayout {
         let width = layout.contentWidth / CGFloat(layout.numberOfColumns)
         let photoInfo = presenter.photoInfoList[indexPath.item]
         let ratio = width / CGFloat(photoInfo.width)
-        let height = CGFloat(photoInfo.height) * ratio
+        let ceilValue = ceil(ratio * 100) / 100
+        let height = CGFloat(photoInfo.height) * ceilValue
         return CGSize(width: width, height: height)
     }
 }

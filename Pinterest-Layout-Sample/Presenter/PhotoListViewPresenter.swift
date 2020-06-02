@@ -45,7 +45,7 @@ final class PhotoListViewPresenterImpl: PhotoListViewPresenter {
                             switch result {
                             case .success(let photoSize):
                                 if !photoSize.sizes.size.isEmpty {
-                                    let targetSize = photoSize.sizes.size.filter { $0.label == "Medium"}
+                                    let targetSize = photoSize.sizes.size.filter { $0.label == "Large"}
                                         .first ?? photoSize.sizes.size.last!
                                     let photoInfo = PhotoInfo(id: photo.id,
                                                               title: photo.title,

@@ -26,7 +26,7 @@ final class PhotoListViewLayout: UICollectionViewFlowLayout {
             let delegateFlowLayout = collectionView.delegate as? UICollectionViewDelegateFlowLayout else {
             return
         }
-
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         let cellWidth = contentWidth / CGFloat(numberOfColumns)
         let cellXOffsets = (0 ..< numberOfColumns).map {
             CGFloat($0) * cellWidth
@@ -46,11 +46,11 @@ final class PhotoListViewLayout: UICollectionViewFlowLayout {
             let cellFrame = CGRect(origin: origin, size: cellSize)
             cellYOffsets[currentColumnNumber] = cellYOffsets[currentColumnNumber] + cellSize.height
             currentColumnNumber = currentColumnNumber < (numberOfColumns - 1) ? currentColumnNumber + 1 : 0
-            // セルの内側にスペースを入れる
-//            let itemFrame = cellFrame.insetBy(dx: cellPadding(), dy: cellPadding())
+            // セル毎にスペースを入れる
+            let itemFrame = cellFrame.insetBy(dx: 7, dy: 10)
             // Attributesを追加
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
-            attributes.frame = cellFrame
+            attributes.frame = itemFrame
             attributesArray.append(attributes)
             // ContentSizeを更新
             contentHeight = max(contentHeight, cellFrame.maxY)
