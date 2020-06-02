@@ -16,16 +16,14 @@ struct Photos: Decodable {
     let page: Int
     let pages: Int
     let perpage: Int
-    let photo: [PhotoInfo]
+    let photo: [Photo]
 }
 
-struct PhotoInfo: Decodable {
+struct Photo: Decodable {
     let id: String
     let owner: String
     let secret: String
     let server: String
     let farm: Int
-    let datetaken: String
     let title: String
-    let url_o: String?
 }

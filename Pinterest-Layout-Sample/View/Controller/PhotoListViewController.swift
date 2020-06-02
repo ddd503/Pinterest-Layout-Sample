@@ -40,17 +40,30 @@ final class PhotoListViewController: UIViewController {
 
 extension PhotoListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        presenter.photos.count
+        presenter.photoInfoList.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoInfoCell.identifier, for: indexPath) as! PhotoInfoCell
-        cell.setInfo(presenter.photos[indexPath.item])
+        cell.setInfo(presenter.photoInfoList[indexPath.item])
         return cell
     }
 }
 
 extension PhotoListViewController: UICollectionViewDelegate {}
+
+extension PhotoListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard let layout = collectionViewLayout as? PhotoListViewLayout else {
+            return .zero
+        }
+        let width = layout.contentWidth / CGFloat(layout.numberOfColumns)
+        let photoInfo = presenter.photoInfoList[indexPath.item]
+        let ratio = width / CGFloat(photoInfo.width)
+        let height = CGFloat(photoInfo.height) * ratio
+        return CGSize(width: width, height: height)
+    }
+}
 
 extension PhotoListViewController: PhotoListViewPresenterOutput {
     func updatePhotoList() {

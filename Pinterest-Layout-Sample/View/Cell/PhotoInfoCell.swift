@@ -26,8 +26,7 @@ final class PhotoInfoCell: UICollectionViewCell {
     }
     
     func setInfo(_ info: PhotoInfo) {
-        let imageUrlString = info.url_o ?? "https://farm\(info.farm).staticflickr.com/\(info.server)/\(info.id)_\(info.secret).jpg"
-        if let imageUrl = URL(string: imageUrlString) {
+        if let imageUrl = URL(string: info.source) {
             photoImageView.load(url: imageUrl, placeholder: nil)
         }
     }

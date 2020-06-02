@@ -12,10 +12,13 @@
 		45241428248351E4004ABF77 /* PhotoInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45241426248351E4004ABF77 /* PhotoInfoCell.xib */; };
 		4524142B248352F7004ABF77 /* PhotoListTransitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524142A248352F7004ABF77 /* PhotoListTransitter.swift */; };
 		4524142D24836C5F004ABF77 /* UIImageView+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524142C24836C5F004ABF77 /* UIImageView+Cache.swift */; };
+		4524142F24838D5C004ABF77 /* PhotoListViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524142E24838D5C004ABF77 /* PhotoListViewLayout.swift */; };
+		4542E82F24853A1000CE3986 /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542E82E24853A1000CE3986 /* PhotoInfo.swift */; };
 		45666F2724757C6C0085A532 /* PhotoListViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45666F2624757C6C0085A532 /* PhotoListViewPresenter.swift */; };
 		45666F2D247582CC0085A532 /* PhotoInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45666F2C247582CC0085A532 /* PhotoInfoEntity.swift */; };
 		45666F30247582FF0085A532 /* PhotoInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45666F2F247582FF0085A532 /* PhotoInfoRepository.swift */; };
 		45666F32247583290085A532 /* APIDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45666F31247583290085A532 /* APIDataStore.swift */; };
+		45B11C9C24854E5B009519CB /* PhotoSizeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B11C9B24854E5B009519CB /* PhotoSizeEntity.swift */; };
 		45DF8C7824755FDD00E993A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF8C7724755FDD00E993A8 /* AppDelegate.swift */; };
 		45DF8C7A24755FDD00E993A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF8C7924755FDD00E993A8 /* SceneDelegate.swift */; };
 		45DF8C8124755FDF00E993A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45DF8C8024755FDF00E993A8 /* Assets.xcassets */; };
@@ -33,10 +36,13 @@
 		45241426248351E4004ABF77 /* PhotoInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoInfoCell.xib; sourceTree = "<group>"; };
 		4524142A248352F7004ABF77 /* PhotoListTransitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListTransitter.swift; sourceTree = "<group>"; };
 		4524142C24836C5F004ABF77 /* UIImageView+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cache.swift"; sourceTree = "<group>"; };
+		4524142E24838D5C004ABF77 /* PhotoListViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewLayout.swift; sourceTree = "<group>"; };
+		4542E82E24853A1000CE3986 /* PhotoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
 		45666F2624757C6C0085A532 /* PhotoListViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewPresenter.swift; sourceTree = "<group>"; };
 		45666F2C247582CC0085A532 /* PhotoInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoEntity.swift; sourceTree = "<group>"; };
 		45666F2F247582FF0085A532 /* PhotoInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoRepository.swift; sourceTree = "<group>"; };
 		45666F31247583290085A532 /* APIDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataStore.swift; sourceTree = "<group>"; };
+		45B11C9B24854E5B009519CB /* PhotoSizeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSizeEntity.swift; sourceTree = "<group>"; };
 		45DF8C7424755FDD00E993A8 /* Pinterest-Layout-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pinterest-Layout-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DF8C7724755FDD00E993A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45DF8C7924755FDD00E993A8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +81,65 @@
 				4524142A248352F7004ABF77 /* PhotoListTransitter.swift */,
 			);
 			path = Transitter;
+			sourceTree = "<group>";
+		};
+		4524143024838D62004ABF77 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				4524142E24838D5C004ABF77 /* PhotoListViewLayout.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		4524143124838D64004ABF77 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				45241425248351E4004ABF77 /* PhotoInfoCell.swift */,
+				45241426248351E4004ABF77 /* PhotoInfoCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4524143224838D67004ABF77 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				45DF8C8F247579D200E993A8 /* PhotoListViewController.swift */,
+				45DF8C90247579D200E993A8 /* PhotoListViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4542E82A248539DA00CE3986 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				45666F2C247582CC0085A532 /* PhotoInfoEntity.swift */,
+				45B11C9B24854E5B009519CB /* PhotoSizeEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		4542E82B248539E200CE3986 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				45666F2F247582FF0085A532 /* PhotoInfoRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		4542E82C248539EB00CE3986 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				45666F31247583290085A532 /* APIDataStore.swift */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		4542E82D24853A0200CE3986 /* ValueObject */ = {
+			isa = PBXGroup;
+			children = (
+				4542E82E24853A1000CE3986 /* PhotoInfo.swift */,
+			);
+			path = ValueObject;
 			sourceTree = "<group>";
 		};
 		45DF8C6B24755FDD00E993A8 = {
@@ -131,10 +196,9 @@
 		45DF8C8D247576C500E993A8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				45DF8C8F247579D200E993A8 /* PhotoListViewController.swift */,
-				45DF8C90247579D200E993A8 /* PhotoListViewController.xib */,
-				45241425248351E4004ABF77 /* PhotoInfoCell.swift */,
-				45241426248351E4004ABF77 /* PhotoInfoCell.xib */,
+				4524143224838D67004ABF77 /* Controller */,
+				4524143124838D64004ABF77 /* Cell */,
+				4524143024838D62004ABF77 /* Layout */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -142,9 +206,10 @@
 		45DF8C8E2475772F00E993A8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				45666F2C247582CC0085A532 /* PhotoInfoEntity.swift */,
-				45666F2F247582FF0085A532 /* PhotoInfoRepository.swift */,
-				45666F31247583290085A532 /* APIDataStore.swift */,
+				4542E82D24853A0200CE3986 /* ValueObject */,
+				4542E82C248539EB00CE3986 /* DataStore */,
+				4542E82B248539E200CE3986 /* Repository */,
+				4542E82A248539DA00CE3986 /* Entity */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -286,6 +351,7 @@
 				45666F2724757C6C0085A532 /* PhotoListViewPresenter.swift in Sources */,
 				45666F2D247582CC0085A532 /* PhotoInfoEntity.swift in Sources */,
 				45DF8C91247579D200E993A8 /* PhotoListViewController.swift in Sources */,
+				4542E82F24853A1000CE3986 /* PhotoInfo.swift in Sources */,
 				45DF8C7824755FDD00E993A8 /* AppDelegate.swift in Sources */,
 				45666F30247582FF0085A532 /* PhotoInfoRepository.swift in Sources */,
 				452414242482214D004ABF77 /* URL+Requst.swift in Sources */,
@@ -293,6 +359,8 @@
 				4524142D24836C5F004ABF77 /* UIImageView+Cache.swift in Sources */,
 				45666F32247583290085A532 /* APIDataStore.swift in Sources */,
 				45241427248351E4004ABF77 /* PhotoInfoCell.swift in Sources */,
+				45B11C9C24854E5B009519CB /* PhotoSizeEntity.swift in Sources */,
+				4524142F24838D5C004ABF77 /* PhotoListViewLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
