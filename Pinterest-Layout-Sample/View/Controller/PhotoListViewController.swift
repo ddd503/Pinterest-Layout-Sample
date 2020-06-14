@@ -50,7 +50,13 @@ extension PhotoListViewController: UICollectionViewDataSource {
     }
 }
 
-extension PhotoListViewController: UICollectionViewDelegate {}
+extension PhotoListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let didSelectPhotoInfo = presenter.photoInfoList[indexPath.item]
+        let photoDetailVC = AppTransitter.makePhotoDetailViewController(photoInfo: didSelectPhotoInfo)
+        present(photoDetailVC, animated: true)
+    }
+}
 
 extension PhotoListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

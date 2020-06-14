@@ -15,4 +15,8 @@ final class AppTransitter {
         let presenter = PhotoListViewPresenterImpl(photoInfoRepository: photoInfoRepository)
         return PhotoListViewController(presenter: presenter)
     }
+
+    static func makePhotoDetailViewController(photoInfo: PhotoInfo) -> PhotoDetailViewController {
+        PhotoDetailViewController(photoInfo: photoInfo)
+    }
 }
