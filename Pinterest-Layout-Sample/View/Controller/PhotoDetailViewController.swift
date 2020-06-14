@@ -10,7 +10,10 @@ import UIKit
 
 final class PhotoDetailViewController: UIViewController {
 
-    init() {
+    private let photoInfo: PhotoInfo
+
+    init(photoInfo: PhotoInfo) {
+        self.photoInfo = photoInfo
         super.init(nibName: "PhotoDetailViewController", bundle: .main)
     }
 
@@ -39,6 +42,7 @@ extension PhotoDetailViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoDetailInfoCell.identifier, for: indexPath) as! PhotoDetailInfoCell
+        cell.setInfo(photoInfo)
         return cell
     }
 }

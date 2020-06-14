@@ -11,6 +11,8 @@ import UIKit
 final class PhotoDetailInfoCell: UICollectionViewCell {
 
     @IBOutlet weak private var photoImageView: UIImageView!
+    @IBOutlet weak private var photoTitleLabel: UILabel!
+    @IBOutlet weak private var photoIdLabel: UILabel!
 
     func setInfo(_ info: PhotoInfo) {}
 }

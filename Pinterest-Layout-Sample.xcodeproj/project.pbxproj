@@ -10,7 +10,7 @@
 		452414242482214D004ABF77 /* URL+Requst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452414232482214D004ABF77 /* URL+Requst.swift */; };
 		45241427248351E4004ABF77 /* PhotoInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45241425248351E4004ABF77 /* PhotoInfoCell.swift */; };
 		45241428248351E4004ABF77 /* PhotoInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45241426248351E4004ABF77 /* PhotoInfoCell.xib */; };
-		4524142B248352F7004ABF77 /* PhotoListTransitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524142A248352F7004ABF77 /* PhotoListTransitter.swift */; };
+		4524142B248352F7004ABF77 /* AppTransitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524142A248352F7004ABF77 /* AppTransitter.swift */; };
 		4524142D24836C5F004ABF77 /* UIImageView+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524142C24836C5F004ABF77 /* UIImageView+Cache.swift */; };
 		4524142F24838D5C004ABF77 /* PhotoListViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4524142E24838D5C004ABF77 /* PhotoListViewLayout.swift */; };
 		4542E82F24853A1000CE3986 /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542E82E24853A1000CE3986 /* PhotoInfo.swift */; };
@@ -39,7 +39,7 @@
 		452414232482214D004ABF77 /* URL+Requst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Requst.swift"; sourceTree = "<group>"; };
 		45241425248351E4004ABF77 /* PhotoInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoCell.swift; sourceTree = "<group>"; };
 		45241426248351E4004ABF77 /* PhotoInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoInfoCell.xib; sourceTree = "<group>"; };
-		4524142A248352F7004ABF77 /* PhotoListTransitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListTransitter.swift; sourceTree = "<group>"; };
+		4524142A248352F7004ABF77 /* AppTransitter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTransitter.swift; sourceTree = "<group>"; };
 		4524142C24836C5F004ABF77 /* UIImageView+Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Cache.swift"; sourceTree = "<group>"; };
 		4524142E24838D5C004ABF77 /* PhotoListViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListViewLayout.swift; sourceTree = "<group>"; };
 		4542E82E24853A1000CE3986 /* PhotoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		45241429248352CD004ABF77 /* Transitter */ = {
 			isa = PBXGroup;
 			children = (
-				4524142A248352F7004ABF77 /* PhotoListTransitter.swift */,
+				4524142A248352F7004ABF77 /* AppTransitter.swift */,
 			);
 			path = Transitter;
 			sourceTree = "<group>";
@@ -364,7 +364,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4524142B248352F7004ABF77 /* PhotoListTransitter.swift in Sources */,
+				4524142B248352F7004ABF77 /* AppTransitter.swift in Sources */,
 				45666F2724757C6C0085A532 /* PhotoListViewPresenter.swift in Sources */,
 				45666F2D247582CC0085A532 /* PhotoInfoEntity.swift in Sources */,
 				458CBD7B2495E50F00C2C6E2 /* PhotoDetailViewController.swift in Sources */,

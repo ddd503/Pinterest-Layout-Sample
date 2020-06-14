@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = PhotoListTransitter.makePhotoListViewController()
+        window.rootViewController = AppTransitter.makePhotoListViewController()
         self.window = window
         self.window?.makeKeyAndVisible()
     }

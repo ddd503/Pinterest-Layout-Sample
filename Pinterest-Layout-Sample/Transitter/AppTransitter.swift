@@ -1,5 +1,5 @@
 //
-//  PhotoListTransitter.swift
+//  AppTransitter.swift
 //  Pinterest-Layout-Sample
 //
 //  Created by kawaharadai on 2020/05/31.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class PhotoListTransitter {
+final class AppTransitter {
     static func makePhotoListViewController() -> PhotoListViewController {
         let apiDataStore = APIDataStoreImpl()
         let photoInfoRepository = PhotoInfoRepositoryImpl(apiDataStore: apiDataStore)
