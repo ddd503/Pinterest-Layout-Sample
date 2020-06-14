@@ -18,6 +18,11 @@
 		45666F2D247582CC0085A532 /* PhotoInfoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45666F2C247582CC0085A532 /* PhotoInfoEntity.swift */; };
 		45666F30247582FF0085A532 /* PhotoInfoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45666F2F247582FF0085A532 /* PhotoInfoRepository.swift */; };
 		45666F32247583290085A532 /* APIDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45666F31247583290085A532 /* APIDataStore.swift */; };
+		458CBD7B2495E50F00C2C6E2 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458CBD792495E50F00C2C6E2 /* PhotoDetailViewController.swift */; };
+		458CBD7C2495E50F00C2C6E2 /* PhotoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458CBD7A2495E50F00C2C6E2 /* PhotoDetailViewController.xib */; };
+		458CBD822495E68300C2C6E2 /* UIView+XIB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458CBD812495E68300C2C6E2 /* UIView+XIB.swift */; };
+		458CBD852495E81400C2C6E2 /* PhotoDetailInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458CBD832495E81400C2C6E2 /* PhotoDetailInfoCell.swift */; };
+		458CBD862495E81400C2C6E2 /* PhotoDetailInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458CBD842495E81400C2C6E2 /* PhotoDetailInfoCell.xib */; };
 		45B11C9C24854E5B009519CB /* PhotoSizeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B11C9B24854E5B009519CB /* PhotoSizeEntity.swift */; };
 		45DF8C7824755FDD00E993A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF8C7724755FDD00E993A8 /* AppDelegate.swift */; };
 		45DF8C7A24755FDD00E993A8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DF8C7924755FDD00E993A8 /* SceneDelegate.swift */; };
@@ -42,6 +47,11 @@
 		45666F2C247582CC0085A532 /* PhotoInfoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoEntity.swift; sourceTree = "<group>"; };
 		45666F2F247582FF0085A532 /* PhotoInfoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfoRepository.swift; sourceTree = "<group>"; };
 		45666F31247583290085A532 /* APIDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataStore.swift; sourceTree = "<group>"; };
+		458CBD792495E50F00C2C6E2 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		458CBD7A2495E50F00C2C6E2 /* PhotoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoDetailViewController.xib; sourceTree = "<group>"; };
+		458CBD812495E68300C2C6E2 /* UIView+XIB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+XIB.swift"; sourceTree = "<group>"; };
+		458CBD832495E81400C2C6E2 /* PhotoDetailInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailInfoCell.swift; sourceTree = "<group>"; };
+		458CBD842495E81400C2C6E2 /* PhotoDetailInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoDetailInfoCell.xib; sourceTree = "<group>"; };
 		45B11C9B24854E5B009519CB /* PhotoSizeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSizeEntity.swift; sourceTree = "<group>"; };
 		45DF8C7424755FDD00E993A8 /* Pinterest-Layout-Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pinterest-Layout-Sample.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DF8C7724755FDD00E993A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +81,7 @@
 			children = (
 				452414232482214D004ABF77 /* URL+Requst.swift */,
 				4524142C24836C5F004ABF77 /* UIImageView+Cache.swift */,
+				458CBD812495E68300C2C6E2 /* UIView+XIB.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -96,6 +107,8 @@
 			children = (
 				45241425248351E4004ABF77 /* PhotoInfoCell.swift */,
 				45241426248351E4004ABF77 /* PhotoInfoCell.xib */,
+				458CBD832495E81400C2C6E2 /* PhotoDetailInfoCell.swift */,
+				458CBD842495E81400C2C6E2 /* PhotoDetailInfoCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -105,6 +118,8 @@
 			children = (
 				45DF8C8F247579D200E993A8 /* PhotoListViewController.swift */,
 				45DF8C90247579D200E993A8 /* PhotoListViewController.xib */,
+				458CBD792495E50F00C2C6E2 /* PhotoDetailViewController.swift */,
+				458CBD7A2495E50F00C2C6E2 /* PhotoDetailViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -291,8 +306,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				458CBD7C2495E50F00C2C6E2 /* PhotoDetailViewController.xib in Resources */,
 				45241428248351E4004ABF77 /* PhotoInfoCell.xib in Resources */,
 				45DF8C8424755FDF00E993A8 /* LaunchScreen.storyboard in Resources */,
+				458CBD862495E81400C2C6E2 /* PhotoDetailInfoCell.xib in Resources */,
 				45DF8C92247579D200E993A8 /* PhotoListViewController.xib in Resources */,
 				45DF8C8124755FDF00E993A8 /* Assets.xcassets in Resources */,
 			);
@@ -350,14 +367,17 @@
 				4524142B248352F7004ABF77 /* PhotoListTransitter.swift in Sources */,
 				45666F2724757C6C0085A532 /* PhotoListViewPresenter.swift in Sources */,
 				45666F2D247582CC0085A532 /* PhotoInfoEntity.swift in Sources */,
+				458CBD7B2495E50F00C2C6E2 /* PhotoDetailViewController.swift in Sources */,
 				45DF8C91247579D200E993A8 /* PhotoListViewController.swift in Sources */,
 				4542E82F24853A1000CE3986 /* PhotoInfo.swift in Sources */,
 				45DF8C7824755FDD00E993A8 /* AppDelegate.swift in Sources */,
+				458CBD852495E81400C2C6E2 /* PhotoDetailInfoCell.swift in Sources */,
 				45666F30247582FF0085A532 /* PhotoInfoRepository.swift in Sources */,
 				452414242482214D004ABF77 /* URL+Requst.swift in Sources */,
 				45DF8C7A24755FDD00E993A8 /* SceneDelegate.swift in Sources */,
 				4524142D24836C5F004ABF77 /* UIImageView+Cache.swift in Sources */,
 				45666F32247583290085A532 /* APIDataStore.swift in Sources */,
+				458CBD822495E68300C2C6E2 /* UIView+XIB.swift in Sources */,
 				45241427248351E4004ABF77 /* PhotoInfoCell.swift in Sources */,
 				45B11C9C24854E5B009519CB /* PhotoSizeEntity.swift in Sources */,
 				4524142F24838D5C004ABF77 /* PhotoListViewLayout.swift in Sources */,

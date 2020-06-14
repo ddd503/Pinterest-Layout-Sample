@@ -20,7 +20,7 @@
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="FCU-p6-4Yf">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nOA-pI-AkQ" customClass="PhotoListViewLayout" customModule="Pinterest_Layout_Sample" customModuleProvider="target">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -29,7 +29,6 @@
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
-            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="FCU-p6-4Yf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="B2P-Eb-BT5"/>
                 <constraint firstAttribute="bottom" secondItem="FCU-p6-4Yf" secondAttribute="bottom" id="HgT-eN-dhf"/>

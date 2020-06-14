@@ -28,7 +28,7 @@ final class PhotoListViewController: UIViewController {
     }
 
     required init?(coder: NSCoder) {
-        return nil
+        nil
     }
 
     override func viewDidLoad() {
