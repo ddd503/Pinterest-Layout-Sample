@@ -10,10 +10,6 @@ import UIKit
 
 final class PhotoDetailViewController: UIViewController {
 
-    @IBAction func back(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
-
     @IBOutlet weak var photoDetailInfoList: UICollectionView! {
         didSet {
             photoDetailInfoList.dataSource = self
@@ -35,6 +31,10 @@ final class PhotoDetailViewController: UIViewController {
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+
+    @IBAction func back(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -73,7 +73,7 @@ extension PhotoDetailViewController: UICollectionViewDelegateFlowLayout {
         let infoContentHeight = dummyTitleLabel.frame.height + dummyIdLabel.frame.height + allSpacing // StackView分(妥協の暫定対応)
 
         let height = CGFloat(photoInfo.height) * ceilValue + infoContentHeight
-        
+
         return CGSize(width: width, height: height)
     }
 }
