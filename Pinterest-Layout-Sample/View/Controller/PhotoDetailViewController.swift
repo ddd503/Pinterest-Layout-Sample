@@ -58,7 +58,22 @@ extension PhotoDetailViewController: UICollectionViewDelegateFlowLayout {
         let width = layout.contentWidth / CGFloat(layout.numberOfColumns)
         let ratio = width / CGFloat(photoInfo.width)
         let ceilValue = ceil(ratio * 100) / 100
-        let height = CGFloat(photoInfo.height) * ceilValue + 60 // 妥協の暫定対応（StackViewの高さが計算できない）
+
+        let dummyTitleLabel = UILabel(frame: .zero)
+        dummyTitleLabel.frame.size.width = width
+        dummyTitleLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        dummyTitleLabel.text = photoInfo.title
+        dummyTitleLabel.sizeToFit()
+        let dummyIdLabel = UILabel(frame: .zero)
+        dummyIdLabel.frame.size.width = width
+        dummyIdLabel.font = UIFont.systemFont(ofSize: 12)
+        dummyIdLabel.text = photoInfo.id
+        dummyIdLabel.sizeToFit()
+        let allSpacing = CGFloat(25)
+        let infoContentHeight = dummyTitleLabel.frame.height + dummyIdLabel.frame.height + allSpacing // StackView分(妥協の暫定対応)
+
+        let height = CGFloat(photoInfo.height) * ceilValue + infoContentHeight
+        
         return CGSize(width: width, height: height)
     }
 }
