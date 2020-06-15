@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class PhotoInfoCell: UICollectionViewCell {
+final class PhotoInfoCell: UICollectionViewCell, ZoomUpPhotoTransitionFromViewType {
 
-    @IBOutlet weak private var photoImageView: UIImageView!
+    @IBOutlet weak var photoImageView: UIImageView!
 
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -18,8 +18,6 @@ final class PhotoInfoCell: UICollectionViewCell {
     }
     
     func setInfo(_ info: PhotoInfo) {
-        if let imageUrl = URL(string: info.source) {
-            photoImageView.load(url: imageUrl, placeholder: nil)
-        }
+        photoImageView.load(url: info.source, placeholder: nil)
     }
 }

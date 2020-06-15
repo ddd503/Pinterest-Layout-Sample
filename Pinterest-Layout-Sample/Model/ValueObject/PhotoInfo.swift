@@ -12,7 +12,7 @@ import UIKit
 struct PhotoInfo {
     let id: String
     let title: String
-    let source: String
+    let source: URL
     let width: Int
     let height: Int
 }

@@ -8,9 +8,9 @@
 
 import UIKit
 
-final class PhotoListViewController: UIViewController {
+final class PhotoListViewController: UIViewController, ZoomUpPhotoTransitionFromControllerType {
 
-    @IBOutlet weak private var photoListView: UICollectionView! {
+    @IBOutlet weak var photoListView: UICollectionView! {
         didSet {
             photoListView.dataSource = self
             photoListView.delegate = self
@@ -29,6 +29,10 @@ final class PhotoListViewController: UIViewController {
 
     required init?(coder: NSCoder) {
         nil
+    }
+
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
     override func viewDidLoad() {
@@ -54,6 +58,8 @@ extension PhotoListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let didSelectPhotoInfo = presenter.photoInfoList[indexPath.item]
         let photoDetailVC = AppTransitter.makePhotoDetailViewController(photoInfo: didSelectPhotoInfo)
+        photoDetailVC.transitioningDelegate = self
+        photoDetailVC.modalPresentationStyle = .fullScreen
         present(photoDetailVC, animated: true)
     }
 }
@@ -77,5 +83,20 @@ extension PhotoListViewController: PhotoListViewPresenterOutput {
         DispatchQueue.main.async { [unowned self] in
             self.photoListView.reloadData()
         }
+    }
+}
+
+extension PhotoListViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController,
+                             presenting: UIViewController,
+                             source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return nil
+        
+        guard let selectedPhotoIndexPath = photoListView.indexPathsForSelectedItems?.first else {
+            return nil
+        }
+
+        let info = presenter.photoInfoList[selectedPhotoIndexPath.item]
+        return PresentTransitionAnimator(duration: 10, style: .zoomUpPhoto(info: info))
     }
 }

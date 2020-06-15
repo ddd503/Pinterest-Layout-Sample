@@ -45,11 +45,14 @@ final class PhotoListViewPresenterImpl: PhotoListViewPresenter {
                             switch result {
                             case .success(let photoSize):
                                 if !photoSize.sizes.size.isEmpty {
-                                    let targetSize = photoSize.sizes.size.filter { $0.label == "Large"}
-                                        .first ?? photoSize.sizes.size.last!
+                                    let filterResult = photoSize.sizes.size.filter { $0.label == "Large" }
+                                        .first ?? photoSize.sizes.size.last
+                                    guard let targetSize = filterResult, let source = URL(string: targetSize.source) else {
+                                        return
+                                    }
                                     let photoInfo = PhotoInfo(id: photo.id,
                                                               title: photo.title,
-                                                              source: targetSize.source,
+                                                              source: source,
                                                               width: targetSize.width,
                                                               height: targetSize.height)
                                     self.photoInfoList.append(photoInfo)
