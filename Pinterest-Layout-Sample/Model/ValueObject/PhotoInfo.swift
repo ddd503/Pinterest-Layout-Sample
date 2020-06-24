@@ -15,4 +15,5 @@ struct PhotoInfo {
     let source: URL
     let width: Int
     let height: Int
+    var cacheImage: UIImage?
 }

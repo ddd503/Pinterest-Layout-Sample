@@ -15,7 +15,7 @@ final class PhotoDetailInfoCell: UICollectionViewCell, ZoomUpPhotoTransitionToVi
     @IBOutlet private weak var photoIdLabel: UILabel!
 
     func setInfo(_ info: PhotoInfo) {
-        photoImageView.load(url: info.source, placeholder: nil)
+        photoImageView.load(url: info.source, placeholder: info.cacheImage)
         photoTitleLabel.text = info.title
         photoIdLabel.text = "ID: \(info.id)"
         photoTitleLabel.isHidden = info.title.isEmpty

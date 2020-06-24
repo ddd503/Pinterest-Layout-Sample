@@ -56,7 +56,10 @@ extension PhotoListViewController: UICollectionViewDataSource {
 
 extension PhotoListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let didSelectPhotoInfo = presenter.photoInfoList[indexPath.item]
+        var didSelectPhotoInfo = presenter.photoInfoList[indexPath.item]
+        if let didSelectCell = collectionView.cellForItem(at: indexPath) as? PhotoInfoCell {
+            didSelectPhotoInfo.cacheImage = didSelectCell.displayImage()
+        }
         let photoDetailVC = AppTransitter.makePhotoDetailViewController(photoInfo: didSelectPhotoInfo)
         photoDetailVC.transitioningDelegate = self
         photoDetailVC.modalPresentationStyle = .fullScreen

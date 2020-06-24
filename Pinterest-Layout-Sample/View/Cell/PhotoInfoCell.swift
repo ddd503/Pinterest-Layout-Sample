@@ -20,4 +20,8 @@ final class PhotoInfoCell: UICollectionViewCell, ZoomUpPhotoTransitionFromViewTy
     func setInfo(_ info: PhotoInfo) {
         photoImageView.load(url: info.source, placeholder: nil)
     }
+
+    func displayImage() -> UIImage? {
+        photoImageView.image
+    }
 }

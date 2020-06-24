@@ -27,8 +27,8 @@ extension UIImageView {
                     // キャッシュがない場合はダウンロードして、キャッシュ、表示
                     let cachedData = CachedURLResponse(response: response, data: data)
                     cache.storeCachedResponse(cachedData, for: request)
-                    DispatchQueue.main.async { [unowned self] in
-                        self.image = image
+                    DispatchQueue.main.async { [weak self] in
+                        self?.image = image
                     }
                 }
             }).resume()

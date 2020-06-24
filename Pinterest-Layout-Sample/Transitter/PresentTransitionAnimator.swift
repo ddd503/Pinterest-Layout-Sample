@@ -81,6 +81,11 @@ extension PresentTransitionAnimator: UIViewControllerAnimatedTransitioning {
         dummyImageView.layer.cornerRadius = 15
         dummyImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
 
+        let dummyImageBackgroundView = UIView(frame: dummyImageViewFrame)
+        dummyImageBackgroundView.backgroundColor = fromVC.photoListView.backgroundColor
+        // 背景をtoVC.viewの後ろに差し込む
+        containerView.insertSubview(dummyImageBackgroundView, belowSubview: toVC.view)
+
         let distinationFrame = toView.convert(toView.photoImageView.frame, to: toVC.view)
 
         let animator = UIViewPropertyAnimator(duration: duration, dampingRatio: 0.8) {
@@ -91,6 +96,7 @@ extension PresentTransitionAnimator: UIViewControllerAnimatedTransitioning {
         animator.addCompletion { (_) in
             toView.photoImageView.alpha = 1.0
             dummyImageView.removeFromSuperview()
+            dummyImageBackgroundView.removeFromSuperview()
             let isFinishTransition = !transitionContext.transitionWasCancelled
             transitionContext.completeTransition(isFinishTransition)
         }
