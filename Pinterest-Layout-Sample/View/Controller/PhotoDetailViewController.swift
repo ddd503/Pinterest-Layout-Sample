@@ -8,13 +8,13 @@
 
 import UIKit
 
-final class PhotoDetailViewController: UIViewController {
+final class PhotoDetailViewController: UIViewController, ZoomUpPhotoTransitionToControllerType {
 
-    @IBOutlet weak var photoDetailInfoList: UICollectionView! {
+    @IBOutlet weak var photoInfoListView: UICollectionView! {
         didSet {
-            photoDetailInfoList.dataSource = self
-            photoDetailInfoList.delegate = self
-            photoDetailInfoList.register(PhotoDetailInfoCell.nib(),
+            photoInfoListView.dataSource = self
+            photoInfoListView.delegate = self
+            photoInfoListView.register(PhotoDetailInfoCell.nib(),
                                    forCellWithReuseIdentifier: PhotoDetailInfoCell.identifier)
         }
     }
@@ -71,7 +71,6 @@ extension PhotoDetailViewController: UICollectionViewDelegateFlowLayout {
         dummyIdLabel.sizeToFit()
         let allSpacing = CGFloat(25)
         let infoContentHeight = dummyTitleLabel.frame.height + dummyIdLabel.frame.height + allSpacing // StackView分(妥協の暫定対応)
-
         let height = CGFloat(photoInfo.height) * ceilValue + infoContentHeight
 
         return CGSize(width: width, height: height)

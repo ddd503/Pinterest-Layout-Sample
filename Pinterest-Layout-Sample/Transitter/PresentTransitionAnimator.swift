@@ -21,6 +21,10 @@ protocol ZoomUpPhotoTransitionFromViewType: UIView {
 }
 
 protocol ZoomUpPhotoTransitionToControllerType: UIViewController {
+    var photoInfoListView: UICollectionView! { get }
+}
+
+protocol ZoomUpPhotoTransitionToViewType: UIView {
     var photoImageView: UIImageView! { get }
 }
 
@@ -50,34 +54,43 @@ extension PresentTransitionAnimator: UIViewControllerAnimatedTransitioning {
         guard let fromVC = transitionContext.viewController(forKey: .from) as? ZoomUpPhotoTransitionFromControllerType,
             let selectedPhotoIndexPath = fromVC.photoListView.indexPathsForSelectedItems?.first,
             let fromView = fromVC.photoListView.cellForItem(at: selectedPhotoIndexPath) as? ZoomUpPhotoTransitionFromViewType,
-            let dummyPhotoImageView = fromView.photoImageView.snapshotView(afterScreenUpdates: true),
             let toVC = transitionContext.viewController(forKey: .to) as? ZoomUpPhotoTransitionToControllerType else {
+                transitionContext.completeTransition(false)
                 return
         }
 
         let containerView = transitionContext.containerView
-//        let finalFrame = transitionContext.finalFrame(for: toVC)
-        let width = toVC.photoImageView.frame.width
-        let ratio = width / CGFloat(photoInfo.width)
-        let ceilValue = ceil(ratio * 100) / 100
-        let height = CGFloat(photoInfo.height) * ceilValue
-        toVC.photoImageView.frame.size.height = height
-
+        toVC.view.frame = UIScreen.main.bounds
         toVC.view.layoutIfNeeded()
         toVC.view.alpha = 0
         containerView.addSubview(toVC.view)
 
-        let dummyPhotoImageFrame = fromVC.view.convert(fromView.frame, to: fromVC.photoListView)
-        dummyPhotoImageView.frame = dummyPhotoImageFrame
-        containerView.addSubview(dummyPhotoImageView)
+        guard let toView = toVC.photoInfoListView.cellForItem(at: IndexPath(item: 0, section: 0)) as? ZoomUpPhotoTransitionToViewType else {
+                transitionContext.completeTransition(false)
+                return
+        }
 
-        let animator = UIViewPropertyAnimator(duration: duration, dampingRatio: 0.5) {
-            dummyPhotoImageView.frame = toVC.photoImageView.frame
+        toView.photoImageView.alpha = 0
+
+        let dummyImageViewFrame = fromView.convert(fromView.photoImageView.frame, to: fromVC.view)
+        let dummyImageView = UIImageView(frame: dummyImageViewFrame)
+        dummyImageView.image = toView.photoImageView.image ?? fromView.photoImageView.image
+        dummyImageView.contentMode = toView.photoImageView.contentMode
+        containerView.addSubview(dummyImageView)
+        dummyImageView.layer.masksToBounds = true
+        dummyImageView.layer.cornerRadius = 15
+        dummyImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+
+        let distinationFrame = toView.convert(toView.photoImageView.frame, to: toVC.view)
+
+        let animator = UIViewPropertyAnimator(duration: duration, dampingRatio: 0.8) {
+            dummyImageView.frame = distinationFrame
+            toVC.view.alpha = 1.0
         }
 
         animator.addCompletion { (_) in
-            dummyPhotoImageView.removeFromSuperview()
-            toVC.view.alpha = 1.0
+            toView.photoImageView.alpha = 1.0
+            dummyImageView.removeFromSuperview()
             let isFinishTransition = !transitionContext.transitionWasCancelled
             transitionContext.completeTransition(isFinishTransition)
         }

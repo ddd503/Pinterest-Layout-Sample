@@ -37,9 +37,9 @@ final class PhotoListViewLayout: UICollectionViewFlowLayout {
         (0..<collectionView.numberOfItems(inSection: section)).forEach {
             let indexPath = IndexPath(item: $0, section: section)
             guard let cellSize = delegateFlowLayout.collectionView?(collectionView,
-                                                          layout: self,
-                                                          sizeForItemAt: indexPath) else {
-                                                            return
+                                                                    layout: self,
+                                                                    sizeForItemAt: indexPath) else {
+                                                                        return
             }
             let origin = CGPoint(x: cellXOffsets[currentColumnNumber],
                                  y: cellYOffsets[currentColumnNumber])

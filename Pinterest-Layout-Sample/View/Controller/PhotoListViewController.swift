@@ -90,13 +90,11 @@ extension PhotoListViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController,
                              presenting: UIViewController,
                              source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return nil
-        
         guard let selectedPhotoIndexPath = photoListView.indexPathsForSelectedItems?.first else {
             return nil
         }
 
         let info = presenter.photoInfoList[selectedPhotoIndexPath.item]
-        return PresentTransitionAnimator(duration: 10, style: .zoomUpPhoto(info: info))
+        return PresentTransitionAnimator(duration: 0.7, style: .zoomUpPhoto(info: info))
     }
 }

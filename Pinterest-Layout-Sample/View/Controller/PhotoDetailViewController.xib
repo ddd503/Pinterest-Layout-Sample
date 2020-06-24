@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhotoDetailViewController" customModule="Pinterest_Layout_Sample" customModuleProvider="target">
             <connections>
-                <outlet property="photoDetailInfoList" destination="KD0-9Q-9Ui" id="WXZ-Ty-aTi"/>
+                <outlet property="photoInfoListView" destination="KD0-9Q-9Ui" id="WXZ-Ty-aTi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
