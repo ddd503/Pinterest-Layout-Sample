@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class PhotoInfoCell: UICollectionViewCell, ZoomUpPhotoTransitionFromViewType {
+final class PhotoInfoCell: UICollectionViewCell, ZoomUpPhotoTransitionDepartureViewType {
 
     @IBOutlet weak var photoImageView: UIImageView!
 

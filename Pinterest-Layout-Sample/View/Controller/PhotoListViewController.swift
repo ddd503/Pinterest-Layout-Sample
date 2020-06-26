@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class PhotoListViewController: UIViewController, ZoomUpPhotoTransitionFromControllerType {
+final class PhotoListViewController: UIViewController, ZoomUpPhotoTransitionDepartureControllerType {
 
     @IBOutlet weak var photoListView: UICollectionView! {
         didSet {
@@ -93,11 +93,10 @@ extension PhotoListViewController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController,
                              presenting: UIViewController,
                              source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        guard let selectedPhotoIndexPath = photoListView.indexPathsForSelectedItems?.first else {
-            return nil
-        }
+        PresentTransitionAnimator(duration: 0.7, style: .zoomUpPhoto)
+    }
 
-        let info = presenter.photoInfoList[selectedPhotoIndexPath.item]
-        return PresentTransitionAnimator(duration: 0.7, style: .zoomUpPhoto(info: info))
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        DismissTransitionAnimator(duration: 0.3, style: .zoomOutPhoto)
     }
 }

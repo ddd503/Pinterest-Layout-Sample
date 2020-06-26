@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class PhotoDetailViewController: UIViewController, ZoomUpPhotoTransitionToControllerType {
+final class PhotoDetailViewController: UIViewController, ZoomUpPhotoTransitionArrivalControllerType {
 
     @IBOutlet weak var photoInfoListView: UICollectionView! {
         didSet {

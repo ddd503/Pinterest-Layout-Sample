@@ -9,22 +9,22 @@
 import UIKit
 
 enum PresentTransitionAnimationStyle {
-    case zoomUpPhoto(info: PhotoInfo)
+    case zoomUpPhoto
 }
 
-protocol ZoomUpPhotoTransitionFromControllerType: UIViewController {
+protocol ZoomUpPhotoTransitionDepartureControllerType: UIViewController {
     var photoListView: UICollectionView! { get }
 }
 
-protocol ZoomUpPhotoTransitionFromViewType: UIView {
+protocol ZoomUpPhotoTransitionDepartureViewType: UIView {
     var photoImageView: UIImageView! { get }
 }
 
-protocol ZoomUpPhotoTransitionToControllerType: UIViewController {
+protocol ZoomUpPhotoTransitionArrivalControllerType: UIViewController {
     var photoInfoListView: UICollectionView! { get }
 }
 
-protocol ZoomUpPhotoTransitionToViewType: UIView {
+protocol ZoomUpPhotoTransitionArrivalViewType: UIView {
     var photoImageView: UIImageView! { get }
 }
 
@@ -45,56 +45,56 @@ extension PresentTransitionAnimator: UIViewControllerAnimatedTransitioning {
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         switch style {
-        case .zoomUpPhoto(let photoInfo):
-            zoomUpPhotoTransition(transitionContext: transitionContext, photoInfo: photoInfo)
+        case .zoomUpPhoto:
+            zoomUpPhotoTransition(transitionContext: transitionContext)
         }
     }
 
-    private func zoomUpPhotoTransition(transitionContext: UIViewControllerContextTransitioning, photoInfo: PhotoInfo) {
-        guard let fromVC = transitionContext.viewController(forKey: .from) as? ZoomUpPhotoTransitionFromControllerType,
-            let selectedPhotoIndexPath = fromVC.photoListView.indexPathsForSelectedItems?.first,
-            let fromView = fromVC.photoListView.cellForItem(at: selectedPhotoIndexPath) as? ZoomUpPhotoTransitionFromViewType,
-            let toVC = transitionContext.viewController(forKey: .to) as? ZoomUpPhotoTransitionToControllerType else {
+    private func zoomUpPhotoTransition(transitionContext: UIViewControllerContextTransitioning) {
+        guard let transitionFromVC = transitionContext.viewController(forKey: .from) as? ZoomUpPhotoTransitionDepartureControllerType,
+            let selectedPhotoIndexPath = transitionFromVC.photoListView.indexPathsForSelectedItems?.first,
+            let transitionFromView = transitionFromVC.photoListView.cellForItem(at: selectedPhotoIndexPath) as? ZoomUpPhotoTransitionDepartureViewType,
+            let transitionToVC = transitionContext.viewController(forKey: .to) as? ZoomUpPhotoTransitionArrivalControllerType else {
                 transitionContext.completeTransition(false)
                 return
         }
 
         let containerView = transitionContext.containerView
-        toVC.view.frame = UIScreen.main.bounds
-        toVC.view.layoutIfNeeded()
-        toVC.view.alpha = 0
-        containerView.addSubview(toVC.view)
+        transitionToVC.view.frame = UIScreen.main.bounds
+        transitionToVC.view.layoutIfNeeded()
+        transitionToVC.view.alpha = 0
+        containerView.addSubview(transitionToVC.view)
 
-        guard let toView = toVC.photoInfoListView.cellForItem(at: IndexPath(item: 0, section: 0)) as? ZoomUpPhotoTransitionToViewType else {
+        guard let transitionToView = transitionToVC.photoInfoListView.cellForItem(at: IndexPath(item: 0, section: 0)) as? ZoomUpPhotoTransitionArrivalViewType else {
                 transitionContext.completeTransition(false)
                 return
         }
 
-        toView.photoImageView.alpha = 0
+        transitionToView.photoImageView.alpha = 0
 
-        let dummyImageViewFrame = fromView.convert(fromView.photoImageView.frame, to: fromVC.view)
+        let dummyImageViewFrame = transitionFromView.convert(transitionFromView.photoImageView.frame, to: transitionFromVC.view)
         let dummyImageView = UIImageView(frame: dummyImageViewFrame)
-        dummyImageView.image = toView.photoImageView.image ?? fromView.photoImageView.image
-        dummyImageView.contentMode = toView.photoImageView.contentMode
+        dummyImageView.image = transitionToView.photoImageView.image ?? transitionFromView.photoImageView.image
+        dummyImageView.contentMode = transitionToView.photoImageView.contentMode
         containerView.addSubview(dummyImageView)
         dummyImageView.layer.masksToBounds = true
         dummyImageView.layer.cornerRadius = 15
         dummyImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
 
         let dummyImageBackgroundView = UIView(frame: dummyImageViewFrame)
-        dummyImageBackgroundView.backgroundColor = fromVC.photoListView.backgroundColor
+        dummyImageBackgroundView.backgroundColor = transitionFromVC.photoListView.backgroundColor
         // 背景をtoVC.viewの後ろに差し込む
-        containerView.insertSubview(dummyImageBackgroundView, belowSubview: toVC.view)
+        containerView.insertSubview(dummyImageBackgroundView, belowSubview: transitionToVC.view)
 
-        let distinationFrame = toView.convert(toView.photoImageView.frame, to: toVC.view)
+        let distinationFrame = transitionToView.convert(transitionToView.photoImageView.frame, to: transitionToVC.view)
 
         let animator = UIViewPropertyAnimator(duration: duration, dampingRatio: 0.8) {
             dummyImageView.frame = distinationFrame
-            toVC.view.alpha = 1.0
+            transitionToVC.view.alpha = 1.0
         }
 
         animator.addCompletion { (_) in
-            toView.photoImageView.alpha = 1.0
+            transitionToView.photoImageView.alpha = 1.0
             dummyImageView.removeFromSuperview()
             dummyImageBackgroundView.removeFromSuperview()
             let isFinishTransition = !transitionContext.transitionWasCancelled
