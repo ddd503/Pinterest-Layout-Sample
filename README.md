@@ -1,5 +1,5 @@
 # Pinterest-Layout-Sample
-Pintarestのフィード画面のようなUIサンプル
+Pinterestのフィード画面のようなUIサンプル
 
 |Category | Version |
 |:-----------|:------------|
